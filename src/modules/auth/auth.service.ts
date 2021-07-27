@@ -6,7 +6,7 @@ import { SingupDto, SinginDto } from './dto';
 import { User } from '../user/user.entity';
 import { compare } from 'bcryptjs';
 import { IJwtPayload } from './jwt-payload.interface';
-import { RoleType } from '../roles/roletype.enum';
+import { RoleType } from '../transformador/roles/roletype.enum';
 @Injectable()
 export class AuthService {
   constructor(

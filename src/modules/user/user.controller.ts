@@ -10,9 +10,9 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { Roles } from '../roles/decorators/role.decorator';
-import { RoleGuard } from '../roles/guards/role.guard';
-import { RoleType } from '../roles/roletype.enum';
+import { Roles } from '../transformador/roles/decorators/role.decorator';
+import { RoleGuard } from '../transformador/roles/guards/role.guard';
+import { RoleType } from '../transformador/roles/roletype.enum';
 import { readUserDto, updateUserDto } from './dtos';
 import { User } from './user.entity';
 import { UserService } from './user.service';

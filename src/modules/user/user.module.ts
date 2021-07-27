@@ -4,7 +4,7 @@ import { UserRepository } from './user.repository';
 import { UserService } from './user.service';
 import { UserController } from './user.controller';
 import { AuthModule } from '../auth/auth.module';
-import { RoleRepository } from '../roles/role.repository';
+import { RoleRepository } from '../transformador/roles/role.repository';
 @Module({
   imports: [
     TypeOrmModule.forFeature([UserRepository, RoleRepository]),

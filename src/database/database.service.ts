@@ -10,14 +10,14 @@ export const databaseProviders = [
     inject: [ConfigService],
     async useFactory(config: ConfigService) {
       return {
-        type: 'mssql',
+        type: 'postgres' as 'postgres',
         host: config.get(Configuration.HOST),
         username: config.get(Configuration.USERNAME),
         password: config.get(Configuration.PASSWORD),
         database: config.get(Configuration.DATABASE),
-        port: 62227,
+        port: 5432,
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-        migrations: [__dirname + '/migrations/*{.ts,.js}'],
+        migrations: [__dirname + '/migrations/*{.ts,.js}']
       } as ConnectionOptions;
     },
   }),

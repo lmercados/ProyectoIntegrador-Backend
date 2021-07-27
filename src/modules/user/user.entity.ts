@@ -11,7 +11,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Role } from '../roles/role.entity';
+import { Role } from '../transformador/roles/role.entity';
 import { UserDetails } from './user.details.entity';
 @Entity('users')
 export class User extends BaseEntity {

@@ -1,11 +1,11 @@
 {
   
-    "type": "mssql",
-    "host": "ensdeswin\\mssqlserver2014",
-    "username": "lmercados",
-    "password":"lmercados01",
-    "port":1443,
-    "database":"sadi",
+    "type": "postgres",
+    "host": "localhost",
+    "username": "postgres",
+    "password":"Edenorte2020/*-",
+    "port":5432,
+    "database":"sigde",
     "entities": ["src/**/**/*.entity{.ts,.js}"],
     "migrations": ["src/database/migrations/*{.ts,.js}"],
     "cli":{

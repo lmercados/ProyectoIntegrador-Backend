@@ -1,8 +1,8 @@
 import { genSalt, hash } from 'bcryptjs';
 import { Entity, EntityRepository, getConnection, Repository } from 'typeorm';
-import { Role } from '../roles/role.entity';
-import { RoleRepository } from '../roles/role.repository';
-import { RoleType } from '../roles/roletype.enum';
+import { Role } from '../transformador/roles/role.entity';
+import { RoleRepository } from '../transformador/roles/role.repository';
+import { RoleType } from '../transformador/roles/roletype.enum';
 import { UserDetails } from '../user/user.details.entity';
 import { User } from '../user/user.entity';
 import { SingupDto } from './dto';

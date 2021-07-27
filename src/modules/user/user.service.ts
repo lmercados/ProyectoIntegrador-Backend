@@ -6,7 +6,7 @@ import {
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './user.entity';
 import { UserRepository } from './user.repository';
-import { RoleRepository } from '../roles/role.repository';
+import { RoleRepository } from '../transformador/roles/role.repository';
 import { status } from '../../shared/entity-status.num';
 import { readUserDto, updateUserDto } from './dtos';
 import { plainToClass } from 'class-transformer';
