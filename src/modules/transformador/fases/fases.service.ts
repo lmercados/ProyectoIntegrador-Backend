@@ -29,7 +29,7 @@ export class FasesService {
 
   async findOne(faseId: number): Promise<Fase> {
     const readFase: Fase = await this.__faseRepository.findOne({
-      where: { id_fase: faseId },
+      where: { faseId: faseId },
     });
 
     if (!readFase) {
@@ -40,7 +40,7 @@ export class FasesService {
 
   async update(faseId: number, updateFaseDto: Fase): Promise<Fase> {
     const readFase: Fase = await this.__faseRepository.findOne({
-      where: { id_fase: faseId },
+      where: { faseId: faseId },
     });
 
     if (!readFase) {
@@ -53,7 +53,7 @@ export class FasesService {
 
   async remove(faseId: number): Promise<void> {
     const readFase: Fase = await this.__faseRepository.findOne({
-      where: { id_fase: faseId },
+      where: { faseId: faseId },
     });
 
     if (!readFase) {

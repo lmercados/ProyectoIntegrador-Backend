@@ -28,7 +28,7 @@ export class ValoracionService {
   async findOne(valoracionId: number): Promise<Valoracion> {
     const readValoracion: Valoracion = await this.__valoracionRepository.findOne(
       {
-        where: { id_valoracion: valoracionId },
+        where: { valoracionId: valoracionId },
       },
     );
 
@@ -44,7 +44,7 @@ export class ValoracionService {
   ): Promise<Valoracion> {
     const readValoracion: Valoracion = await this.__valoracionRepository.findOne(
       {
-        where: { id_valoracion: valoracionId },
+        where: { valoracionId: valoracionId },
       },
     );
 
@@ -52,7 +52,7 @@ export class ValoracionService {
       throw new NotFoundException('Este ID de valoracion no existe');
     }
     readValoracion.valoracion = updateValoracion.valoracion;
-    readValoracion.id_valoracion = updateValoracion.id_valoracion;
+    readValoracion.valoracionId = updateValoracion.valoracionId;
 
     const updatedCapacidad = await this.__valoracionRepository.update(
       valoracionId,
@@ -64,7 +64,7 @@ export class ValoracionService {
   async remove(valoracionId: number): Promise<void> {
     const readValoracion: Valoracion = await this.__valoracionRepository.findOne(
       {
-        where: { id_valoracion: valoracionId },
+        where: { valoracionId: valoracionId },
       },
     );
 

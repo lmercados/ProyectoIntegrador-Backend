@@ -27,7 +27,7 @@ export class ConexionService {
 
   async findFaseConexion(faseId: number): Promise<Conexion[]> {
     const readConexion: Conexion[] = await this.__conexionRepository.find({
-      where: { id_fase: faseId },
+      where: { faseId: faseId },
     });
 
     if (!readConexion) {
@@ -37,7 +37,7 @@ export class ConexionService {
   }
   async findOne(conexionId: number): Promise<Conexion> {
     const readConexion: Conexion = await this.__conexionRepository.findOne({
-      where: { id_conexion: conexionId },
+      where: { conexionId: conexionId },
     });
 
     if (!readConexion) {
@@ -51,13 +51,13 @@ export class ConexionService {
     updateConexion: Conexion,
   ): Promise<Conexion> {
     const readConexion: Conexion = await this.__conexionRepository.findOne({
-      where: { id_conexion: conexionId },
+      where: { conexionId: conexionId },
     });
 
     if (!readConexion) {
       throw new NotFoundException('Este ID no existe para esta conexion');
     }
-    readConexion.id_conexion = conexionId;
+    readConexion.conexionId = conexionId;
     readConexion.conexion = updateConexion.conexion;
     const updatedConexion = await this.__conexionRepository.update(
       conexionId,
@@ -68,7 +68,7 @@ export class ConexionService {
 
   async remove(conexionId: number): Promise<void> {
     const readConexion: Conexion = await this.__conexionRepository.findOne({
-      where: { id_conexion: conexionId },
+      where: { conexionId: conexionId },
     });
 
     if (!readConexion) {

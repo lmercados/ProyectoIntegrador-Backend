@@ -24,9 +24,9 @@ export class TipoSoporteService {
     }
     return readtipoSoporte;
   }
-  async findAllSoporte(soporteId: number): Promise<TipoSoporte[]> {
+  async findAllSoporte(tipoSoporteId: number): Promise<TipoSoporte[]> {
     const readtipoSoporte: TipoSoporte[] = await this.__tiposoporteRepository.find(
-      { where: { id_soporte: soporteId } },
+      { where: { tipoSoporteId: tipoSoporteId } },
     );
 
     if (!readtipoSoporte) {
@@ -37,7 +37,7 @@ export class TipoSoporteService {
   async findOne(tiposoporteId: number): Promise<TipoSoporte> {
     const readtipoSoporte: TipoSoporte = await this.__tiposoporteRepository.findOne(
       {
-        where: { id_tipo_soporte: tiposoporteId },
+        where: { tipoSoporteId: tiposoporteId },
       },
     );
 
@@ -53,15 +53,15 @@ export class TipoSoporteService {
   ): Promise<TipoSoporte> {
     const readtipoSoporte: TipoSoporte = await this.__tiposoporteRepository.findOne(
       {
-        where: { id_tipo_soporte: tiposoporteId },
+        where: { tipoSoporteId: tiposoporteId },
       },
     );
 
     if (!readtipoSoporte) {
       throw new NotFoundException('Este ID para este soporte no existe');
     }
-    readtipoSoporte.id_tipo_soporte = tiposoporteId;
-    readtipoSoporte.tipo_soporte = updatetipoSoporte.tipo_soporte;
+    readtipoSoporte.tipoSoporteId = tiposoporteId;
+    readtipoSoporte.tipoSoporte = updatetipoSoporte.tipoSoporte;
 
     const updatedtipoSoporte = await this.__tiposoporteRepository.update(
       tiposoporteId,
@@ -73,7 +73,7 @@ export class TipoSoporteService {
   async remove(tiposoporteId: number): Promise<void> {
     const readtipoSoporte: TipoSoporte = await this.__tiposoporteRepository.findOne(
       {
-        where: { id_tipo_soporte: tiposoporteId },
+        where: { tipoSoporteId: tiposoporteId },
       },
     );
 

@@ -27,7 +27,7 @@ export class UserController {
   getUser(@Param('userId', ParseIntPipe) userId: number): Promise<readUserDto> {
     return this._userService.get(userId);
   }
-  @UseGuards(AuthGuard())
+  //@UseGuards(AuthGuard())
   @Get()
   getUsers(): Promise<readUserDto[]> {
     return this._userService.getAll();

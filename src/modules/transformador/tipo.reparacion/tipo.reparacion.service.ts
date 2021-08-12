@@ -28,7 +28,7 @@ export class tipoReparacionService {
   async findOne(tipoReparacionId: number): Promise<tipoReparacion> {
     const readtipoReparacion: tipoReparacion = await this._tipoReparacionRepository.findOne(
       {
-        where: { id_tipoReparacion: tipoReparacionId },
+        where: { tipoReparacionId: tipoReparacionId },
       },
     );
 
@@ -44,7 +44,7 @@ export class tipoReparacionService {
   ): Promise<tipoReparacion> {
     const readtipoReparacion: tipoReparacion = await this._tipoReparacionRepository.findOne(
       {
-        where: { id_tipoReparacion: tipoReparacionId },
+        where: { tipoReparacionId: tipoReparacionId },
       },
     );
 
@@ -52,7 +52,7 @@ export class tipoReparacionService {
       throw new NotFoundException('Este ID de tipoReparacion no existe');
     }
     readtipoReparacion.reparacion = updatetipoReparacion.reparacion;
-    readtipoReparacion.id_tipo_reparacion = updatetipoReparacion.id_tipo_reparacion;
+    readtipoReparacion.tipoReparacionId = updatetipoReparacion.tipoReparacionId;
 
     const updatedtipoReparacion= await this._tipoReparacionRepository.update(
       tipoReparacionId,
@@ -64,7 +64,7 @@ export class tipoReparacionService {
   async remove(tipoReparacionId: number): Promise<void> {
     const readtipoReparacion: tipoReparacion = await this._tipoReparacionRepository.findOne(
       {
-        where: { id_tipoReparacion: tipoReparacionId },
+        where: { tipoReparacionId: tipoReparacionId },
       },
     );
 

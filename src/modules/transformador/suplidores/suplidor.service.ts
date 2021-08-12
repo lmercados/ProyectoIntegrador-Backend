@@ -27,7 +27,7 @@ export class SuplidorService {
 
   async findOne(suplidorId: number): Promise<Suplidor> {
     const readSuplidor: Suplidor = await this.__suplidorRepository.findOne({
-      where: { id_suplidor: suplidorId },
+      where: { suplidorId: suplidorId },
     });
 
     if (!readSuplidor) {
@@ -41,14 +41,14 @@ export class SuplidorService {
     updateSuplidor: Suplidor,
   ): Promise<Suplidor> {
     const readSuplidor: Suplidor = await this.__suplidorRepository.findOne({
-      where: { id_suplidor: suplidorId },
+      where: { suplidorId: suplidorId },
     });
 
     if (!readSuplidor) {
       throw new NotFoundException('No existe suplidor con este ID');
     }
     readSuplidor.suplidor = updateSuplidor.suplidor;
-
+    readSuplidor.suplidorId = updateSuplidor.suplidorId;
     const updatedCapacidad = await this.__suplidorRepository.update(
       suplidorId,
       updateSuplidor,
@@ -58,7 +58,7 @@ export class SuplidorService {
 
   async remove(suplidorId: number): Promise<void> {
     const readSuplidor: Suplidor = await this.__suplidorRepository.findOne({
-      where: { id_suplidor: suplidorId },
+      where: { suplidorId: suplidorId },
     });
 
     if (!readSuplidor) {

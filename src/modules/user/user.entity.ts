@@ -16,7 +16,7 @@ import { UserDetails } from './user.details.entity';
 @Entity('users')
 export class User extends BaseEntity {
   @PrimaryGeneratedColumn('increment')
-  id: number;
+  usuarioId: number;
   @Column({ type: 'varchar', unique: true, nullable: false, length: 25 })
   username: string;
   @Column({ type: 'varchar', nullable: false })

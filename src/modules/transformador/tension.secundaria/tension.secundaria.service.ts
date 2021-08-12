@@ -27,10 +27,10 @@ export class TensionSecundariaService {
     return readTension;
   }
 
-  async findOne(tensionId: number): Promise<TensionSecundaria> {
+  async findOne(tensionSecundariaId: number): Promise<TensionSecundaria> {
     const readTension: TensionSecundaria = await this.__tensionRepository.findOne(
       {
-        where: { id_tension: tensionId },
+        where: { tensionSecundariaId: tensionSecundariaId },
       },
     );
 
@@ -41,12 +41,12 @@ export class TensionSecundariaService {
   }
 
   async update(
-    tensionId: number,
+    tensionSecundariaId: number,
     updateTension: TensionSecundaria,
   ): Promise<TensionSecundaria> {
     const readTension: TensionSecundaria = await this.__tensionRepository.findOne(
       {
-        where: { id_tension: tensionId },
+        where: { tensionSecundariaId: tensionSecundariaId },
       },
     );
 
@@ -54,18 +54,18 @@ export class TensionSecundariaService {
       throw new NotFoundException('No existe suplidor con este ID');
     }
     readTension.tension = updateTension.tension;
-    readTension.id_tension = tensionId;
+    readTension.tensionSecundariaId = tensionSecundariaId;
     const updatedTension = await this.__tensionRepository.update(
-      tensionId,
+      tensionSecundariaId,
       readTension,
     );
     return readTension;
   }
 
-  async remove(tensionId: number): Promise<void> {
+  async remove(tensionSecundariaId: number): Promise<void> {
     const readTension: TensionSecundaria = await this.__tensionRepository.findOne(
       {
-        where: { id_tension: tensionId },
+        where: { tensionSecundariaId: tensionSecundariaId },
       },
     );
 
@@ -73,6 +73,6 @@ export class TensionSecundariaService {
       throw new NotFoundException('No existe tension con este ID');
     }
 
-    await this.__tensionRepository.delete(tensionId);
+    await this.__tensionRepository.delete(tensionSecundariaId);
   }
 }

@@ -28,7 +28,7 @@ export class FabricanteService {
   async findOne(fabricanteId: number): Promise<Fabricante> {
     const readFabricante: Fabricante = await this.__fabricanteRepository.findOne(
       {
-        where: { id_fabricante: fabricanteId },
+        where: { fabricanteId: fabricanteId },
       },
     );
 
@@ -44,7 +44,7 @@ export class FabricanteService {
   ): Promise<Fabricante> {
     const readFabricante: Fabricante = await this.__fabricanteRepository.findOne(
       {
-        where: { id_fabricante: fabricanteId },
+        where: { fabricanteId: fabricanteId },
       },
     );
 
@@ -52,7 +52,7 @@ export class FabricanteService {
       throw new NotFoundException('No existe suplidor con este ID');
     }
     readFabricante.fabricante = updateFabricante.fabricante;
-    readFabricante.id_fabricante = fabricanteId;
+    readFabricante.fabricanteId = fabricanteId;
     const updatedFabricante = await this.__fabricanteRepository.update(
       fabricanteId,
       updateFabricante,
@@ -63,7 +63,7 @@ export class FabricanteService {
   async remove(fabricanteId: number): Promise<void> {
     const readFabricante: Fabricante = await this.__fabricanteRepository.findOne(
       {
-        where: { id_fabricante: fabricanteId },
+        where: { fabricanteId: fabricanteId },
       },
     );
 

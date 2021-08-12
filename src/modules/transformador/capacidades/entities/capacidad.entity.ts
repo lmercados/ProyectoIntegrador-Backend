@@ -1,11 +1,9 @@
-import { BaseEntity, Column, Entity, PrimaryColumn } from 'typeorm';
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('transformadores_capacidades')
 export class Capacidad extends BaseEntity {
-  @Column({ type: 'int', nullable: false })
-  id_fase: number;
-  @PrimaryColumn({ type: 'int', unique: true, nullable: false })
-  id_capacidad: number;
-  @Column({ type: 'float', nullable: false })
+  @PrimaryGeneratedColumn({ type: 'int'})
+  capacidadId: number;
+  @Column({ type: 'float', unique: true })
   capacidad: number;
 }

@@ -25,10 +25,10 @@ export class PropiedadService {
     return readPropiedad;
   }
 
-  async findOne(PropiedadId: number): Promise<Propiedad> {
+  async findOne(propiedadId: number): Promise<Propiedad> {
     const readPropiedad: Propiedad = await this._propiedadRepository.findOne(
       {
-        where: { id_Propiedad: PropiedadId },
+        where: { propiedadId: propiedadId },
       },
     );
 
@@ -44,7 +44,7 @@ export class PropiedadService {
   ): Promise<Propiedad> {
     const readPropiedad: Propiedad = await this._propiedadRepository.findOne(
       {
-        where: { id_Propiedad: propiedadId },
+        where: { propiedadId: propiedadId },
       },
     );
 
@@ -52,8 +52,6 @@ export class PropiedadService {
       throw new NotFoundException('Este ID de Propiedad no existe');
     }
     readPropiedad.propiedad = updatePropiedad.propiedad;
-    readPropiedad.id_propiedad = updatePropiedad.id_propiedad;
-
     const updatedPropiedad= await this._propiedadRepository.update(
       propiedadId,
       updatePropiedad,
@@ -64,7 +62,7 @@ export class PropiedadService {
   async remove(propiedadId: number): Promise<void> {
     const readPropiedad: Propiedad = await this._propiedadRepository.findOne(
       {
-        where: { id_propiedad: propiedadId },
+        where: { propiedadId: propiedadId },
       },
     );
 

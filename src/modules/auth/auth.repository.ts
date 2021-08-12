@@ -27,6 +27,8 @@ export class AuthRepository extends Repository<User> {
     user.Roles = [defaultRole];
 
     const details = new UserDetails();
+    details.name =singupDto.name
+    details.lastname =singupDto.lastname
     user.details = details;
 
     const salt = await genSalt(10);

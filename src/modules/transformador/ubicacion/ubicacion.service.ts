@@ -28,7 +28,7 @@ export class UbicacionService {
   async findOne(ubicacionId: number): Promise<Ubicacion> {
     const readUbicacion: Ubicacion = await this._ubicacionRepository.findOne(
       {
-        where: { id_ubicacion: ubicacionId },
+        where: { ubicacionId: ubicacionId },
       },
     );
 
@@ -44,7 +44,7 @@ export class UbicacionService {
   ): Promise<Ubicacion> {
     const readUbicacion: Ubicacion = await this._ubicacionRepository.findOne(
       {
-        where: { id_ubicacion: ubicacionId },
+        where: { ubicacionId: ubicacionId },
       },
     );
 
@@ -52,7 +52,7 @@ export class UbicacionService {
       throw new NotFoundException('Este ID de Ubicacion no existe');
     }
     readUbicacion.ubicacion = updateUbicacion.ubicacion;
-    readUbicacion.id_ubicacion = updateUbicacion.id_ubicacion;
+    readUbicacion.ubicacionId = updateUbicacion.ubicacionId;
 
     const updatedUbicacion= await this._ubicacionRepository.update(
       ubicacionId,
@@ -64,7 +64,7 @@ export class UbicacionService {
   async remove(ubicacionId: number): Promise<void> {
     const readUbicacion: Ubicacion = await this._ubicacionRepository.findOne(
       {
-        where: { id_ubicacion: ubicacionId },
+        where: { ubicacionId: ubicacionId },
       },
     );
 

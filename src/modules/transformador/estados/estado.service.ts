@@ -25,10 +25,10 @@ export class EstadoService {
     return readEstado;
   }
 
-  async findOne(EstadoId: number): Promise<Estados> {
+  async findOne(estadoId: number): Promise<Estados> {
     const readEstado: Estados = await this._estadoRepository.findOne(
       {
-        where: { id_estado: EstadoId },
+        where: { estadoId: estadoId },
       },
     );
 
@@ -39,12 +39,12 @@ export class EstadoService {
   }
 
   async update(
-    EstadoId: number,
+    estadoId: number,
     updateEstado: Estados,
   ): Promise<Estados> {
     const readEstado: Estados = await this._estadoRepository.findOne(
       {
-        where: { id_estado: EstadoId },
+        where: { estadoId: estadoId },
       },
     );
 
@@ -52,19 +52,19 @@ export class EstadoService {
       throw new NotFoundException('Este ID de Estado no existe');
     }
     readEstado.estado = updateEstado.estado;
-    readEstado.id_estado = updateEstado.id_estado;
+    readEstado.estadoId = updateEstado.estadoId;
 
     const updatedEstado= await this._estadoRepository.update(
-      EstadoId,
+      estadoId,
       updateEstado,
     );
     return readEstado;
   }
 
-  async remove(EstadoId: number): Promise<void> {
+  async remove(estadoId: number): Promise<void> {
     const readEstado: Estados = await this._estadoRepository.findOne(
       {
-        where: { id_estado: EstadoId },
+        where: { estadoId: estadoId },
       },
     );
 
@@ -72,6 +72,6 @@ export class EstadoService {
       throw new NotFoundException('Este ID de Estado no existe');
     }
 
-    await this._estadoRepository.delete(EstadoId);
+    await this._estadoRepository.delete(estadoId);
   }
 }

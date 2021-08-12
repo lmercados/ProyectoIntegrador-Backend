@@ -28,7 +28,7 @@ export class RegulacionService {
   async findOne(regulacionId: number): Promise<Regulacion> {
     const readRegulacion: Regulacion = await this.__regulacionRepository.findOne(
       {
-        where: { id_regulacion: regulacionId },
+        where: { regulacionId: regulacionId },
       },
     );
 
@@ -44,7 +44,7 @@ export class RegulacionService {
   ): Promise<Regulacion> {
     const readRegulacion: Regulacion = await this.__regulacionRepository.findOne(
       {
-        where: { id_regulacion: regulacionId },
+        where: { regulacionId: regulacionId },
       },
     );
 
@@ -52,7 +52,7 @@ export class RegulacionService {
       throw new NotFoundException('No existe suplidor con este ID');
     }
     readRegulacion.regulacion = updateRegulacion.regulacion;
-    readRegulacion.id_regulacion = regulacionId;
+    readRegulacion.regulacionId = updateRegulacion.regulacionId;
     const updatedRegulacion = await this.__regulacionRepository.update(
       regulacionId,
       readRegulacion,
@@ -63,7 +63,7 @@ export class RegulacionService {
   async remove(regulacionId: number): Promise<void> {
     const readRegulacion: Regulacion = await this.__regulacionRepository.findOne(
       {
-        where: { id_regulacion: regulacionId },
+        where: { regulacionId: regulacionId },
       },
     );
 

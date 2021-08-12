@@ -29,8 +29,8 @@ export class CapacidadController {
     return this._capacidadService.findOne(+capacidadId);
   }
   @Get(':id')
-  findFase(@Param('id') faseId: string) {
-    return this._capacidadService.findFase(+faseId);
+  findCapacidad(@Param('id') capacidadId: string) {
+    return this._capacidadService.findCapacidad(+capacidadId);
   }
   @Put(':id')
   update(@Param('id') capacidadId: string, @Body() capacidad: Capacidad) {

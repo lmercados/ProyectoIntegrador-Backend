@@ -3,7 +3,7 @@ import { BaseEntity, Column, Entity, PrimaryColumn,PrimaryGeneratedColumn } from
 @Entity('transformadores_efecto')
 export class Efecto extends BaseEntity {
   @PrimaryGeneratedColumn('increment')
-  id_efecto: number;
-  @Column({ type: 'varchar', nullable: false,unique: true})
+  efectoId: number;
+  @Column({ type: 'varchar',unique: true})
   efecto: string;
 }

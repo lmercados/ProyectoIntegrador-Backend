@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Transformador } from './tr.entity';
+import { Transformador } from './entities/tr.entity';
 import { TransformadorRepository } from './tr.repository';
 import { InjectRepository } from '@nestjs/typeorm';
 @Injectable()

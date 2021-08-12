@@ -28,7 +28,7 @@ export class EfectoService {
   async findOne(efectoId: number): Promise<Efecto> {
     const readEfecto: Efecto = await this._efectoRepository.findOne(
       {
-        where: { id_efecto: efectoId },
+        where: { efectoId: efectoId },
       },
     );
 
@@ -44,7 +44,7 @@ export class EfectoService {
   ): Promise<Efecto> {
     const readEfecto: Efecto = await this._efectoRepository.findOne(
       {
-        where: { id_efecto: efectoId },
+        where: { efectoId: efectoId },
       },
     );
 
@@ -52,7 +52,7 @@ export class EfectoService {
       throw new NotFoundException('Este ID de Efecto no existe');
     }
     readEfecto.efecto = updateEfecto.efecto;
-    readEfecto.id_efecto = updateEfecto.id_efecto;
+    readEfecto.efectoId = updateEfecto.efectoId;
 
     const updatedEfecto= await this._efectoRepository.update(
       efectoId,
@@ -64,7 +64,7 @@ export class EfectoService {
   async remove(efectoId: number): Promise<void> {
     const readEfecto: Efecto = await this._efectoRepository.findOne(
       {
-        where: { id_efecto: efectoId },
+        where: { efectoId: efectoId },
       },
     );
 

@@ -20,12 +20,20 @@ import { TensionSecundariaModule } from './modules/transformador/tension.secunda
 import { RegulacionModule } from './modules/transformador/regulaciones/regulaciones.module';
 import { ResultadoModule } from './modules/transformador/evaluacion.resultado/resultado.evaluacion.module';
 import { RazonesRechazoModule } from './modules/transformador/razones.rechazo/razones.rechazo.module';
+import { TipoReparacionModule } from './modules/transformador/tipo.reparacion/tipo.reparacion.module';
+import { UbicacionModule } from './modules/transformador/ubicacion/ubicacion.module';
+import { EstadoModule } from './modules/transformador/estados/estado.module';
+import { PropiedadModule } from './modules/transformador/propiedad/propiedad.module';
+import { EfectoModule } from './modules/transformador/efecto/efecto.module';
+import { UnidadConstructivaModule } from './modules/transformador/unidad-constructiva/unidad.constructiva.module';
+import { ProyectoModule } from './modules/proyecto/proyecto/proyecto.module';
 @Module({
   imports: [
     RazonesRechazoModule,
     ResultadoModule,
     RegulacionModule,
     TensionSecundariaModule,
+    TipoReparacionModule,
     TensionModule,
     ConexionModule,
     FabricanteModule,
@@ -41,6 +49,13 @@ import { RazonesRechazoModule } from './modules/transformador/razones.rechazo/ra
     AuthModule,
     TransformadorModule,
     FasesModule,
+    EstadoModule,
+    UbicacionModule,
+    PropiedadModule,
+    EfectoModule,
+    
+    UnidadConstructivaModule,
+    ProyectoModule
   ],
   controllers: [],
   providers: [],

@@ -27,7 +27,7 @@ export class SoporteService {
 
   async findOne(soporteId: number): Promise<Soporte> {
     const readSoporte: Soporte = await this.__soporteRepository.findOne({
-      where: { id_soporte: soporteId },
+      where: { soporteId: soporteId },
     });
 
     if (!readSoporte) {
@@ -38,14 +38,14 @@ export class SoporteService {
 
   async update(soporteId: number, updateSoporte: Soporte): Promise<Soporte> {
     const readSoporte: Soporte = await this.__soporteRepository.findOne({
-      where: { id_soporte: soporteId },
+      where: { soporteId: soporteId },
     });
 
     if (!readSoporte) {
       throw new NotFoundException('Soportes does not exist');
     }
     readSoporte.soporte = updateSoporte.soporte;
-    readSoporte.id_soporte = updateSoporte.id_soporte;
+    readSoporte.soporteId = updateSoporte.soporteId;
     const updatedSoporte = await this.__soporteRepository.update(
       soporteId,
       readSoporte,
@@ -55,7 +55,7 @@ export class SoporteService {
 
   async remove(soporteId: number): Promise<void> {
     const readSoporte: Soporte = await this.__soporteRepository.findOne({
-      where: { id_soporte: soporteId },
+      where: { soporteId: soporteId },
     });
 
     if (!readSoporte) {

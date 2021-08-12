@@ -26,9 +26,9 @@ export class CapacidadService {
     return readCapacidad;
   }
 
-  async findFase(faseId: number): Promise<Capacidad[]> {
+  async findCapacidad(capacidadId: number): Promise<Capacidad[]> {
     const readCapacidad: Capacidad[] = await this.__capacidadRepository.find({
-      where: { id_fase: faseId },
+      where: { capacidadId: capacidadId },
     });
 
     if (!readCapacidad) {
@@ -38,7 +38,7 @@ export class CapacidadService {
   }
   async findOne(capacidadId: number): Promise<Capacidad> {
     const readCapacidad: Capacidad = await this.__capacidadRepository.findOne({
-      where: { id_capacidad: capacidadId },
+      where: { capacidadId: capacidadId },
     });
 
     if (!readCapacidad) {
@@ -52,13 +52,13 @@ export class CapacidadService {
     updateCapacidad: Capacidad,
   ): Promise<Capacidad> {
     const readCapacidad: Capacidad = await this.__capacidadRepository.findOne({
-      where: { id_capacidad: capacidadId },
+      where: { capacidadId: capacidadId },
     });
 
     if (!readCapacidad) {
       throw new NotFoundException('capacidad does not exist');
     }
-    readCapacidad.id_fase = updateCapacidad.id_fase;
+
     readCapacidad.capacidad = updateCapacidad.capacidad;
     const updatedCapacidad = await this.__capacidadRepository.update(
       capacidadId,
@@ -69,7 +69,7 @@ export class CapacidadService {
 
   async remove(capacidadId: number): Promise<void> {
     const readCapacidad: Capacidad = await this.__capacidadRepository.findOne({
-      where: { id_capacidad: capacidadId },
+      where: { capacidadId: capacidadId },
     });
 
     if (!readCapacidad) {

@@ -9,4 +9,4 @@ import { tipoReparacionRepository } from './tipo.reparacion.repository';
   controllers: [tipoReparacionController],
   providers: [tipoReparacionService],
 })
-export class tipoReparacionModule {}
+export class TipoReparacionModule {}

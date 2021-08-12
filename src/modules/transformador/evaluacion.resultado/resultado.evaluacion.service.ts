@@ -28,7 +28,7 @@ export class ResultadoService {
 
   async findResultado(resultadoId: number): Promise<Resultado[]> {
     const readResultado: Resultado[] = await this.__resultadoRepository.find({
-      where: { id_resultado: resultadoId },
+      where: { resultadoEvaluacionId: resultadoId },
     });
 
     if (!readResultado) {
@@ -38,7 +38,7 @@ export class ResultadoService {
   }
   async findOne(resultadoId: number): Promise<Resultado> {
     const readResultado: Resultado = await this.__resultadoRepository.findOne({
-      where: { id_resultado: resultadoId },
+      where: { resultadoEvaluacionId: resultadoId },
     });
 
     if (!readResultado) {
@@ -52,13 +52,13 @@ export class ResultadoService {
     updateResultado: Resultado,
   ): Promise<Resultado> {
     const readResultado: Resultado = await this.__resultadoRepository.findOne({
-      where: { id_resultado: resultadoId },
+      where: { resultadoEvaluacionId: resultadoId },
     });
 
     if (!readResultado) {
       throw new NotFoundException('resultado does not exist');
     }
-    readResultado.id_resultado = updateResultado.id_resultado;
+    readResultado.resultadoEvaluacionId = updateResultado.resultadoEvaluacionId;
     readResultado.resultado = updateResultado.resultado;
     const updatedResultado = await this.__resultadoRepository.update(
       resultadoId,
@@ -69,7 +69,7 @@ export class ResultadoService {
 
   async remove(resultadoId: number): Promise<void> {
     const readResultado: Resultado = await this.__resultadoRepository.findOne({
-      where: { id_resultado: resultadoId },
+      where: { resultadoEvaluacionId: resultadoId },
     });
 
     if (!readResultado) {

@@ -8,6 +8,7 @@ import { User } from './user.entity';
 import { UserRepository } from './user.repository';
 import { RoleRepository } from '../transformador/roles/role.repository';
 import { status } from '../../shared/entity-status.num';
+import { UserDetails } from './user.details.entity';
 import { readUserDto, updateUserDto } from './dtos';
 import { plainToClass } from 'class-transformer';
 @Injectable()
@@ -72,10 +73,7 @@ export class UserService {
 
     await this._userRepository.update(userId, { status: status.INACTIVE });
   }
-  //82
-  //40
-  //320
-  //
+  
   async setRoletoUser(userId: number, roleId: number): Promise<boolean> {
     const userExists = await this._userRepository.findOne(userId, {
       where: { status: status.ACTIVE },

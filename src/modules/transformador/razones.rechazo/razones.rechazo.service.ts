@@ -29,11 +29,11 @@ export class RazonesRechazoService {
   }
 
   async findRazonesRechazo(
-    razonesRechazoId: number,
+    razonRechazoId: number,
   ): Promise<RazonesRechazo[]> {
     const readRazonesRechazo: RazonesRechazo[] = await this.__razonesRechazoRepository.find(
       {
-        where: { id_razon: razonesRechazoId },
+        where: { razonRechazoId: razonRechazoId },
       },
     );
 
@@ -42,10 +42,10 @@ export class RazonesRechazoService {
     }
     return readRazonesRechazo;
   }
-  async findOne(razonesRechazoId: number): Promise<RazonesRechazo> {
+  async findOne(razonRechazoId: number): Promise<RazonesRechazo> {
     const readRazonesRechazo: RazonesRechazo = await this.__razonesRechazoRepository.findOne(
       {
-        where: { id_razon: razonesRechazoId },
+        where: { razonRechazoId: razonRechazoId },
       },
     );
 
@@ -56,31 +56,31 @@ export class RazonesRechazoService {
   }
 
   async update(
-    razonesRechazoId: number,
+    razonRechazoId: number,
     updateRazonesRechazo: RazonesRechazo,
   ): Promise<RazonesRechazo> {
     const readRazonesRechazo: RazonesRechazo = await this.__razonesRechazoRepository.findOne(
       {
-        where: { id_razon: razonesRechazoId },
+        where: { razonRechazoId: razonRechazoId },
       },
     );
 
     if (!readRazonesRechazo) {
       throw new NotFoundException('razonesRechazo does not exist');
     }
-    readRazonesRechazo.id_razon = updateRazonesRechazo.id_razon;
+    readRazonesRechazo.razonRechazoId = updateRazonesRechazo.razonRechazoId;
     readRazonesRechazo.razones = updateRazonesRechazo.razones;
     const updatedRazonesRechazo = await this.__razonesRechazoRepository.update(
-      razonesRechazoId,
+      razonRechazoId,
       readRazonesRechazo,
     );
     return readRazonesRechazo;
   }
 
-  async remove(razonesRechazoId: number): Promise<void> {
+  async remove(razonRechazoId: number): Promise<void> {
     const readRazonesRechazo: RazonesRechazo = await this.__razonesRechazoRepository.findOne(
       {
-        where: { id_razon: razonesRechazoId },
+        where: { razonRechazoId: razonRechazoId },
       },
     );
 
@@ -88,6 +88,6 @@ export class RazonesRechazoService {
       throw new NotFoundException('razonesRechazo does not exist');
     }
 
-    await this.__razonesRechazoRepository.delete(razonesRechazoId);
+    await this.__razonesRechazoRepository.delete(razonRechazoId);
   }
 }
