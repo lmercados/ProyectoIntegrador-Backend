@@ -28,6 +28,7 @@ import { UnidadConstructiva } from '../../unidad-constructiva/entities/unidad.co
 import { Valoracion } from '../../valoraciones/entities/valoracion.entity';
 import { Proyecto } from '../../../proyecto/proyecto/entities/proyecto.entity';
 import { RazonesRechazo } from '../../razones.rechazo/entities/razones.rechazo.entity';
+import { tipoReparacion } from '../../tipo.reparacion/entities/tipo.reparacion.entity';
 @Entity('transformador')
 export class Transformador extends BaseEntity {
   @PrimaryGeneratedColumn('increment')
@@ -87,7 +88,9 @@ export class Transformador extends BaseEntity {
   @JoinColumn({ name: 'razonRechazoId' })
   razonesRechazoId:RazonesRechazo
   @Column({ type: 'integer' })
-  tipoReparacionId: number;
+  @ManyToOne(type => tipoReparacion, tipoReparacion => tipoReparacion.tipoReparacionId,{ eager: true })
+  @JoinColumn({ name: 'tipoReparacionId' })
+  tipoReparacion: tipoReparacion;
   @ManyToOne(type => User, user => user.usuarioId,{ eager: true })
   @JoinColumn({ name: 'usuarioId' })
   usuario:User

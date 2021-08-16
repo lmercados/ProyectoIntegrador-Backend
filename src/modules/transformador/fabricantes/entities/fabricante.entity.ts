@@ -4,6 +4,6 @@ import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 export class Fabricante extends BaseEntity {
   @PrimaryGeneratedColumn({ type: 'int' })
   fabricanteId: number;
-  @Column({ type: 'varchar', unique: false })
+  @Column({ type: 'varchar', unique: true })
   fabricante: string;
 }

@@ -27,8 +27,14 @@ import { PropiedadModule } from './modules/transformador/propiedad/propiedad.mod
 import { EfectoModule } from './modules/transformador/efecto/efecto.module';
 import { UnidadConstructivaModule } from './modules/transformador/unidad-constructiva/unidad.constructiva.module';
 import { ProyectoModule } from './modules/proyecto/proyecto/proyecto.module';
+import {faseCapacidadModule  } from './modules/transformador/fase-capacidad/faseCapacidad.module';
+import {faseConexionModule  } from './modules/transformador/fase-conexion/faseConexion.module';
+import {soporteTipoSoporteModule  } from './modules/transformador/soporte-tipoSoporte/soporteTipoSoporte.module';
 @Module({
   imports: [
+    soporteTipoSoporteModule,
+    faseConexionModule,
+    faseCapacidadModule,
     RazonesRechazoModule,
     ResultadoModule,
     RegulacionModule,
@@ -53,7 +59,6 @@ import { ProyectoModule } from './modules/proyecto/proyecto/proyecto.module';
     UbicacionModule,
     PropiedadModule,
     EfectoModule,
-    
     UnidadConstructivaModule,
     ProyectoModule
   ],

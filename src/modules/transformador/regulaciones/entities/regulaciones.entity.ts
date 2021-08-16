@@ -4,6 +4,6 @@ import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 export class Regulacion extends BaseEntity {
   @PrimaryGeneratedColumn({ type: 'int' })
   regulacionId: number;
-  @Column({ type: 'varchar', unique: false })
+  @Column({ type: 'varchar', unique: true })
   regulacion: string;
 }
