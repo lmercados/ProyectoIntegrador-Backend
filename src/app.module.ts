@@ -30,8 +30,10 @@ import { ProyectoModule } from './modules/proyecto/proyecto/proyecto.module';
 import {faseCapacidadModule  } from './modules/transformador/fase-capacidad/faseCapacidad.module';
 import {faseConexionModule  } from './modules/transformador/fase-conexion/faseConexion.module';
 import {soporteTipoSoporteModule  } from './modules/transformador/soporte-tipoSoporte/soporteTipoSoporte.module';
+import {resultadoEstadoModule  } from './modules/transformador/resultado-estado/resultado.estado.module';
 @Module({
   imports: [
+    resultadoEstadoModule,
     soporteTipoSoporteModule,
     faseConexionModule,
     faseCapacidadModule,

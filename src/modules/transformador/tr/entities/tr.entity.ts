@@ -29,6 +29,7 @@ import { Valoracion } from '../../valoraciones/entities/valoracion.entity';
 import { Proyecto } from '../../../proyecto/proyecto/entities/proyecto.entity';
 import { RazonesRechazo } from '../../razones.rechazo/entities/razones.rechazo.entity';
 import { tipoReparacion } from '../../tipo.reparacion/entities/tipo.reparacion.entity';
+import { Resultado } from '../../evaluacion.resultado/entities/resultado.evaluacion.entity';
 @Entity('transformador')
 export class Transformador extends BaseEntity {
   @PrimaryGeneratedColumn('increment')
@@ -96,6 +97,9 @@ export class Transformador extends BaseEntity {
   usuario:User
   @Column({ type: 'varchar', length: 100, unique: true })
   sello: string;
+  @ManyToOne(type => Resultado, resultado=> resultado.resultadoEvaluacionId,{ eager: true })
+  @JoinColumn({ name: 'resultadoEvaluacionId' })
+  resultado:Resultado
   @ManyToOne(type => Estados, estado => estado.estadoId,{ eager: true })
   @JoinColumn({ name: 'estadoId' })
   estado:Estados
