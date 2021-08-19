@@ -9,4 +9,4 @@ import {municipioLocalidadRepository } from './municipio.localidad.repository';
   controllers: [municipioLocalidadController],
   providers: [municipioLocalidadService],
 })
-export class provinciaMunicipioModule{}
+export class municipioLocalidadModule{}

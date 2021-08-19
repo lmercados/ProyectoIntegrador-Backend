@@ -10,7 +10,7 @@ import {
 import {ApartarrayosService} from './apartarrayos.service';
 import { Apartarrayos } from './entities/apartarrayos.entity';
 
-@Controller('apartarrayos')
+@Controller('avisos/apartarrayos')
 export class ApartarrayosController {
   constructor(private readonly _apartarrayosService:ApartarrayosService) {}
 

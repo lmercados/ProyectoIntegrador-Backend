@@ -49,10 +49,7 @@ export class TransformadorService {
     if (!readTransformador) {
       throw new NotFoundException('Este ID de tipoReparacion no existe');
     }
-    readTransformador.ubicacion = updateTransformador.ubicacion;
-    readTransformador.propiedad = updateTransformador.propiedad;
-    readTransformador.usuario = updateTransformador.usuario;
-    readTransformador.efecto = updateTransformador.efecto;
+   
     const updatedTransformador = await this._transformadorRepository.update(
       transformadorId,
       updateTransformador,

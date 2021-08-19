@@ -25,10 +25,10 @@ export class causaSubCausaService {
     return readcausaSubCausa;
   }
 
-  async findOne(causaSubcausaId: number): Promise<causaSubCausa> {
-    const readcausaSubCausa: causaSubCausa = await this._causaRepository.findOne(
+  async find(causaId: number): Promise<causaSubCausa[]> {
+    const readcausaSubCausa: causaSubCausa[] = await this._causaRepository.find(
       {
-        where: { causaSubcausaId: causaSubcausaId },
+        where: { causa: causaId },
       },
     );
 

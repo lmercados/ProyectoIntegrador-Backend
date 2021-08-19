@@ -10,7 +10,7 @@ import {
 import {CircuitoService} from './circuito.service';
 import { Circuito } from './entities/circuito.entity';
 
-@Controller('circuito')
+@Controller('aviso/circuitos')
 export class CircuitoController {
   constructor(private readonly _circuitoService:CircuitoService) {}
 

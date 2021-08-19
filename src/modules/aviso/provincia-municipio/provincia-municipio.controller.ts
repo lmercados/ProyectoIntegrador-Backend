@@ -8,9 +8,9 @@ import {
   Delete,
 } from '@nestjs/common';
 import {provinciaMunicipioService} from './provincia-municipio.service';
-import { provinciaMunicipio } from './entities/provincia-municipio';
+import { provinciaMunicipio } from './entities/provincia-municipio.entity';
 
-@Controller('provincia-provincia')
+@Controller('avisos/provincia-municipios')
 export class provinciaMunicipioController {
   constructor(private readonly _provinciaService:provinciaMunicipioService) {}
 
@@ -25,8 +25,8 @@ export class provinciaMunicipioController {
   }
 
   @Get(':id')
-  findOne(@Param('id') provinciaMunicipioId: string) {
-    return this._provinciaService.findOne(+provinciaMunicipioId);
+  findOne(@Param('id') provinciaId: string) {
+    return this._provinciaService.findOne(+provinciaId);
   }
 
   @Put(':id')

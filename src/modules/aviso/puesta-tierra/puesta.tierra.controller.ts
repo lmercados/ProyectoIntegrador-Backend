@@ -10,7 +10,7 @@ import {
 import {puestaTierraService} from './puesta.tierra.service';
 import { puestaTierra } from './entities/puesta.tierra.entity';
 
-@Controller('puesta-tierra')
+@Controller('avisos/puesta-tierras')
 export class puestaTierraController {
   constructor(private readonly _puestaTierraService:puestaTierraService) {}
 

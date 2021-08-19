@@ -7,10 +7,10 @@ import {
   Param,
   Delete,
 } from '@nestjs/common';
-import {SubCausaService} from './subsubcausa.service';
-import { SubCausas } from './entities/subsubcausa.entity';
+import {SubCausaService} from './subcausa.service';
+import { SubCausas } from './entities/subcausa.entity';
 
-@Controller('subcausa')
+@Controller('avisos/subcausas')
 export class SubCausasController {
   constructor(private readonly _subcausaService:SubCausaService) {}
 

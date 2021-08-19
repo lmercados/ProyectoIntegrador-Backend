@@ -10,7 +10,7 @@ import {
 import {SeccionadorService} from './seccionador.service';
 import { Seccionador } from './entities/seccionador.entity';
 
-@Controller('seccionador')
+@Controller('avisos/seccionadores')
 export class SeccionadorController {
   constructor(private readonly _seccionadorService:SeccionadorService) {}
 

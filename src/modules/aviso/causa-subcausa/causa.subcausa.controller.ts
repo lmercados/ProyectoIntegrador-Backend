@@ -10,7 +10,7 @@ import {
 import {causaSubCausaService} from './causa.subcausa.service';
 import { causaSubCausa } from './entities/causa.subcausa.entity';
 
-@Controller('causa-subcausa')
+@Controller('avisos/causa-subcausas')
 export class causaSubCausaController {
   constructor(private readonly _causaService:causaSubCausaService) {}
 
@@ -25,8 +25,8 @@ export class causaSubCausaController {
   }
 
   @Get(':id')
-  findOne(@Param('id') causaSubcausaId: string) {
-    return this._causaService.findOne(+causaSubcausaId);
+  findOne(@Param('id') causaId: string) {
+    return this._causaService.find(+causaId);
   }
 
   @Put(':id')

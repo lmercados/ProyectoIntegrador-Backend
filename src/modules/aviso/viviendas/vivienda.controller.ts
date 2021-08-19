@@ -10,7 +10,7 @@ import {
 import {ViviendaService} from './vivienda.service';
 import { Vivienda } from './entities/vivienda.entity';
 
-@Controller('vivienda')
+@Controller('avisos/viviendas')
 export class ViviendaController {
   constructor(private readonly _viviendaService:ViviendaService) {}
 

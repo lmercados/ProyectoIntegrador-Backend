@@ -8,9 +8,9 @@ import {
   Delete,
 } from '@nestjs/common';
 import {ProvinciaService} from './provincia.service';
-import { Provincia } from './entities/provincia';
+import { Provincia } from './entities/provincia.entity';
 
-@Controller('provincia')
+@Controller('avisos/provincias')
 export class ProvinciaController {
   constructor(private readonly _provinciaService:ProvinciaService) {}
 

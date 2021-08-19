@@ -9,4 +9,4 @@ import { RecomendacionRepository } from './recomendacion.repository';
   controllers: [RecomendacionController],
   providers: [RecomendacionService],
 })
-export class ApoyoModule {}
+export class RecomendacionModule {}

@@ -7,10 +7,10 @@ import {
   Param,
   Delete,
 } from '@nestjs/common';
-import {municipioLocalidadService} from './municipioLocalidad-municipio.service';
-import { municipioLocalidad } from './entities/municipioLocalidad-municipio';
+import {municipioLocalidadService} from './municipio.localidad.service';
+import { municipioLocalidad } from './entities/municipio.localidad.entity';
 
-@Controller('municipio-localidad')
+@Controller('avisos/municipio-localidades')
 export class municipioLocalidadController {
   constructor(private readonly _municipioLocalidadService:municipioLocalidadService) {}
 
@@ -25,8 +25,8 @@ export class municipioLocalidadController {
   }
 
   @Get(':id')
-  findOne(@Param('id') municipioLocalidadId: string) {
-    return this._municipioLocalidadService.findOne(+municipioLocalidadId);
+  findOne(@Param('id') municipioId: string) {
+    return this._municipioLocalidadService.find(+municipioId);
   }
 
   @Put(':id')

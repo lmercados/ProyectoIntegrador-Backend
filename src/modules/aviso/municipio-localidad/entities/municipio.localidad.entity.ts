@@ -1,7 +1,7 @@
 import { BaseEntity, Column,JoinColumn, ManyToOne,Entity, PrimaryColumn,PrimaryGeneratedColumn } from 'typeorm';
-import { Localidad } from '../../localidad/entities/localidad';
-import { Municipio } from '../../municipio/entities/municipio';
-import { Provincia } from '../../provincia/entities/provincia';
+import { Localidad } from '../../localidad/entities/localidad.entity';
+import { Municipio } from '../../municipio/entities/municipio.entity';
+import { Provincia } from '../../provincia/entities/provincia.entity';
 
 @Entity('aviso_municipio_localidades')
 export class municipioLocalidad extends BaseEntity {

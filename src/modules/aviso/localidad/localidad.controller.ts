@@ -8,9 +8,9 @@ import {
   Delete,
 } from '@nestjs/common';
 import {LocalidadService} from './localidad.service';
-import { Localidad } from './entities/localidad';
+import { Localidad } from './entities/localidad.entity';
 
-@Controller('localidad')
+@Controller('avisos/localidades')
 export class LocalidadController {
   constructor(private readonly _localidadService:LocalidadService) {}
 

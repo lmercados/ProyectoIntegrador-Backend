@@ -24,7 +24,7 @@ export class AuthService {
       throw new NotFoundException('username or email already exists');
     }
 
-    return this._authRepository.singUp(signupDto);
+         this._authRepository.singUp(signupDto);
   }
 
   async singin(signupDto: SinginDto): Promise<{ token: string }> {

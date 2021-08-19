@@ -9,4 +9,4 @@ import { EstadosRepository } from './estado.repository';
   controllers: [EstadosController],
   providers: [EstadosService],
 })
-export class EstadoModule {}
+export class AvisoEstadoModule {}

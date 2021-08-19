@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import {provinciaMunicipio} from './entities/provincia-municipio';
+import {provinciaMunicipio} from './entities/provincia-municipio.entity';
 import {provinciaMunicipioRepository } from './provincia-municipio.repository';
 
 @Injectable()
@@ -25,10 +25,10 @@ export class provinciaMunicipioService {
     return readprovinciaMunicipio;
   }
 
-  async findOne(provinciaMunicipioId: number): Promise<provinciaMunicipio> {
-    const readprovinciaMunicipio: provinciaMunicipio = await this._provinciaRepository.findOne(
+  async findOne(provinciaId: number): Promise<provinciaMunicipio[]> {
+    const readprovinciaMunicipio: provinciaMunicipio[]  = await this._provinciaRepository.find(
       {
-        where: { provinciaMunicipioId: provinciaMunicipioId },
+        where: { provincia: provinciaId },
       },
     );
 

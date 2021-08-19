@@ -8,9 +8,9 @@ import {
   Delete,
 } from '@nestjs/common';
 import {SectorService} from './sector.service';
-import { Sector } from './entities/sector';
+import { Sector } from './entities/sector.entity';
 
-@Controller('sector')
+@Controller('avisos/sectores')
 export class SectorController {
   constructor(private readonly _sectorService:SectorService) {}
 

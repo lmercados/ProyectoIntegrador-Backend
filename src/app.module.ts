@@ -31,8 +31,52 @@ import {faseCapacidadModule  } from './modules/transformador/fase-capacidad/fase
 import {faseConexionModule  } from './modules/transformador/fase-conexion/faseConexion.module';
 import {soporteTipoSoporteModule  } from './modules/transformador/soporte-tipoSoporte/soporteTipoSoporte.module';
 import {resultadoEstadoModule  } from './modules/transformador/resultado-estado/resultado.estado.module';
+import {ApartarrayosModule } from './modules/aviso/apartarrayos/apartarrayos.module';
+import {ApoyoModule } from './modules/aviso/apoyo/apoyo.module';
+import {AvisoModule } from './modules/aviso/avisos/avisos.module';
+import {CausaModule } from './modules/aviso/causa/causa.module';
+import {causaSubCausaModule } from './modules/aviso/causa-subcausa/causa.subcausa.module';
+import {CircuitoModule } from './modules/aviso/circuitos/circuito.module';
+import {AvisoEstadoModule } from './modules/aviso/estado/estado.module';
+import {estadoApoyoModule } from './modules/aviso/estado-apoyo/estado.apoyo.module';
+import {LocalidadModule } from './modules/aviso/localidad/localidad.module';
+import {MunicipioModule} from './modules/aviso/municipio/municipio.module';
+import {ProvinciaModule } from './modules/aviso/provincia/provincia.module';
+import {provinciaMunicipioModule } from './modules/aviso/provincia-municipio/provincia-municipio.module';
+import {puestaTierraModule } from './modules/aviso/puesta-tierra/puesta.tierra.module';
+import {RecomendacionModule } from './modules/aviso/recomendacion/recomendacion.module';
+import {SeccionadorModule } from './modules/aviso/seccionador/seccionador.module';
+import {SectorModule } from './modules/aviso/sector/sector.module';
+import {SubCausaModule } from './modules/aviso/subcausa/subcausa.module';
+import {ViviendaModule } from './modules/aviso/viviendas/vivienda.module';
+import {causaSubCausaEstadoModule } from './modules/aviso/causa-subcausa-estado/causa.subcausa.estado.module';
+import {AvisoTriModule } from './modules/aviso/aviso-tri/aviso.tri.module';
+import {AvisoTrrModule } from './modules/aviso/aviso-trr/aviso.trr.module';
+import { municipioLocalidadModule } from './modules/aviso/municipio-localidad/municipio.localidad.module';
 @Module({
   imports: [
+    causaSubCausaEstadoModule,
+    AvisoTriModule,
+    AvisoTrrModule,
+    municipioLocalidadModule,
+    SeccionadorModule,
+    RecomendacionModule,
+    SectorModule,
+    SubCausaModule,
+    ViviendaModule,
+    provinciaMunicipioModule,
+    puestaTierraModule,
+    LocalidadModule,
+    MunicipioModule,
+    ProvinciaModule,
+    CircuitoModule,
+    AvisoEstadoModule,
+    estadoApoyoModule,
+    causaSubCausaModule,
+    CausaModule,
+    ApartarrayosModule,
+    ApoyoModule,
+    AvisoModule,
     resultadoEstadoModule,
     soporteTipoSoporteModule,
     faseConexionModule,

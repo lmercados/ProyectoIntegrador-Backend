@@ -10,7 +10,7 @@ import {
 import {CausasService} from './causa.service';
 import { Causas } from './entities/causa.entity';
 
-@Controller('causa')
+@Controller('avisos/causas')
 export class CausasController {
   constructor(private readonly _causaService:CausasService) {}
 

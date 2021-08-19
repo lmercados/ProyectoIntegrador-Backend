@@ -10,7 +10,7 @@ import {
 import {estadoApoyoService} from './estado.apoyo.service';
 import {estadoApoyo } from './entities/estado.apoyo.entity';
 
-@Controller('estado-apoyo')
+@Controller('avisos/estado-apoyos')
 export class estadoApoyoController {
   constructor(private readonly _estadoApoyoService:estadoApoyoService) {}
 
